@@ -1,9 +1,29 @@
 fileFormatVersion: 2
-guid: 6e27d5e7fb185c948b0810a84cd1a26f
+guid: 575ca3090281b8d408540608ac9624fc
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlackwireMat
+    second: {fileID: 2100000, guid: c9d9ed8cd5cafb4428061459e504f308, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CoreMat
+    second: {fileID: 2100000, guid: d93c1eaa65b0769448e14166ef6a9164, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PanelMat
+    second: {fileID: 2100000, guid: 0c2a60a4bf1e8d04d8b749a925b1f97b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ScreenMat
+    second: {fileID: 2100000, guid: 13ae2baeaf3e176498341adde2d9dd38, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
