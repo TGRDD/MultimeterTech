@@ -1,10 +1,12 @@
-public class DefaultMultimeterState : IMultimeterState
+public class DisabledMultimeterState : IMultimeterState
 {
     private const string _displayString = "0";
 
     public OutputData Calculate()
     {
-        return new OutputData();
+        OutputData output = new OutputData();
+        output.SetDisplayOutput(_displayString);
+        return output;
     }
 
     public void Enter(InputData inputData)
@@ -15,10 +17,5 @@ public class DefaultMultimeterState : IMultimeterState
     public void Exit()
     {
         return;
-    }
-
-    public string ToDisplay()
-    {
-        return _displayString;
     }
 }

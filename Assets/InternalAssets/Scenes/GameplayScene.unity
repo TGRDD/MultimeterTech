@@ -449,6 +449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1348248329}
   - component: {fileID: 1348248330}
+  - component: {fileID: 1348248331}
   m_Layer: 0
   m_Name: MultimeterController
   m_TagString: Untagged
@@ -483,6 +484,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f155d48a46cdc4098aaf6961dd5e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1348248331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348248328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b928f6cdab7774ab09ea984f9256f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1348248330}
 --- !u!1 &1376916411
 GameObject:
   m_ObjectHideFlags: 0

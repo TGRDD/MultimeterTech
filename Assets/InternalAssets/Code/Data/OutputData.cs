@@ -16,6 +16,8 @@ public class OutputData
     public float D => DCVoltage;
     public float AC => ACVoltage;
 
+    private string _toDisplay;
+    public string ToDisplay => _toDisplay;
 
     public OutputData(float voltage, float amper, float resistance, float power, float acVoltage, float dcVoltage)
     {
@@ -34,6 +36,11 @@ public class OutputData
         Resistance = 0;
         Power = 0;
         ACVoltage = 0;
+    }
+
+    public void SetDisplayOutput(string output)
+    {
+        _toDisplay = output;
     }
 
     public override string ToString()

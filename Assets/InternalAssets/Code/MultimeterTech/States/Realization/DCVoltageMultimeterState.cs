@@ -9,7 +9,10 @@ public class DCVoltageMultimeterState : IMultimeterState
     {
         _calculation = MathF.Sqrt(_data.P * _data.R);
         _calcCompleted = true;
-        return new OutputData(0, 0, 0, 0, 0, _calculation);
+
+        OutputData output = new OutputData(0, 0, 0, 0, 0, _calculation);
+        output.SetDisplayOutput(_calculation.ToString());
+        return output;
     }
 
     public void Enter(InputData inputData)

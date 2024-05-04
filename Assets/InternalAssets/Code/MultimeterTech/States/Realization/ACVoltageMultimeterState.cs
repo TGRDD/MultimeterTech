@@ -1,8 +1,12 @@
 public class ACVoltageMultimeterState : IMultimeterState
 {
+    private const float constACVoltage = 0.01f;
     public OutputData Calculate()
     {
-        return new OutputData(0, 0, 0, 0, 0.01f, 0);
+        OutputData output = new OutputData(0, 0, 0, 0, constACVoltage, 0);
+        output.SetDisplayOutput(constACVoltage.ToString());
+        return output;
+        
     }
 
     public void Enter(InputData inputData)
@@ -13,10 +17,5 @@ public class ACVoltageMultimeterState : IMultimeterState
     public void Exit()
     {
         return;
-    }
-
-    public string ToDisplay()
-    {
-        return "0.01";
     }
 }
