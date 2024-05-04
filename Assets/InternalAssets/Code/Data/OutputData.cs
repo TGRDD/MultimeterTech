@@ -1,5 +1,6 @@
-﻿using Unity.VisualScripting;
+﻿using System;
 
+[Serializable]
 public class OutputData
 {
     private float Voltage;

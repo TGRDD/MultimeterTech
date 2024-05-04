@@ -1,10 +1,13 @@
+using System;
+
 public class ResistanceMultimeterState : IMultimeterState
 {
     private InputData _data;
     public OutputData Calculate()
     {
-        OutputData output = new OutputData(0, 0, _data.R, 0, 0, 0);
-        output.SetDisplayOutput(_data.R.ToString());
+        float result = MathF.Round(_data.R, 2);
+        OutputData output = new OutputData(0, 0, result, 0, 0, 0);
+        output.SetDisplayOutput(result.ToString());
         return output;
 
     }

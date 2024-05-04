@@ -1,7 +1,10 @@
+using System;
+using UnityEngine;
+[Serializable]
 public class InputData
 {
-    private float Resistance;
-    private float Power;
+    [SerializeField] private float Resistance;
+    [SerializeField] private float Power;
 
     public float R => Resistance;
     public float P => Power;

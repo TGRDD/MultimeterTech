@@ -16,11 +16,6 @@ public class MultimeterStateController : MonoBehaviour
         _inputData = data;
     }
 
-    private void Start()
-    {
-        _inputData = new InputData(100, 400);
-    }
-
     public void ChangeState(IMultimeterState state)
     {
         Debug.Log(state.ToString());
