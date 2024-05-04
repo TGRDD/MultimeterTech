@@ -1,37 +1,34 @@
 using UnityEngine;
 
 [RequireComponent(typeof(MeshRenderer))]
-public class GlowEffector : MonoBehaviour
+public class MaterialEffector : MonoBehaviour
 {
     [SerializeField] private MeshRenderer _meshRenderer;
-    [SerializeField] private Color _glowColor;
-    [SerializeField] private float _glowIntensity;
 
+    [SerializeField] private Material _defaultMaterial;
+    [SerializeField] private Material _changeMaterial;
     private bool isGlow;
-
-    private Material mainMaterial => _meshRenderer.material;
 
     private void OnValidate()
     {
         _meshRenderer ??= GetComponent<MeshRenderer>();
     }
 
-    public void GlowUp()
+    public void SetEffect()
     {
         if (!isGlow)
         {
-            mainMaterial.SetColor("_EmissionColor", _glowColor * _glowIntensity);
-            mainMaterial.EnableKeyword("_EMISSION");
+            _meshRenderer.material = _changeMaterial;
             _meshRenderer.UpdateGIMaterials();
             isGlow = true;
         }
     }
 
-    public void GlowDown()
+    public void SetDefault()
     {
         if (isGlow)
         {
-            mainMaterial.DisableKeyword("_EMISSION");
+            _meshRenderer.material = _defaultMaterial;
             _meshRenderer.UpdateGIMaterials();
             isGlow = false;
         }

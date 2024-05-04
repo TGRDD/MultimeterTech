@@ -976,7 +976,7 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.5283019, g: 0.47962716, b: 0.41117835, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1057,7 +1057,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 519420032}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 4294967295
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0
@@ -1921,8 +1921,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1146792831}
-        m_TargetAssemblyTypeName: GlowEffector, Assembly-CSharp
-        m_MethodName: GlowUp
+        m_TargetAssemblyTypeName: MaterialEffector, Assembly-CSharp
+        m_MethodName: SetEffect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1936,8 +1936,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1146792831}
-        m_TargetAssemblyTypeName: GlowEffector, Assembly-CSharp
-        m_MethodName: GlowDown
+        m_TargetAssemblyTypeName: MaterialEffector, Assembly-CSharp
+        m_MethodName: SetDefault
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1983,8 +1983,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meshRenderer: {fileID: 1146792826}
-  _glowColor: {r: 0.13794944, g: 0.9433962, b: 0.17793618, a: 0.3764706}
-  _glowIntensity: 0.5
+  _defaultMaterial: {fileID: 2100000, guid: cbeb511093c8c75458cace9c3abff354, type: 2}
+  _changeMaterial: {fileID: 2100000, guid: 7dc7cbd0a1f87b545aab4e62a887030d, type: 2}
 --- !u!1 &1286469890
 GameObject:
   m_ObjectHideFlags: 0
