@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RaycastInteract : MonoBehaviour
@@ -6,6 +7,8 @@ public class RaycastInteract : MonoBehaviour
 
     private Vector3 _gizmoHitPosition = Vector3.zero;
     private Ray _chachedDirectRay;
+
+    private IInteractable _currentInteractable = null;
 
     private void OnDrawGizmos()
     {
@@ -31,9 +34,20 @@ public class RaycastInteract : MonoBehaviour
             _gizmoHitPosition = hit.point;
 
             InputHelper.TryGetInteractAction(out InteractAction action);
-            interactable.Interact(action);
 
+            _currentInteractable = interactable;
+            interactable.Interact(action);
+            
         }
+        else
+        {
+            if (_currentInteractable != null)
+            {
+                _currentInteractable.LeaveInteraction();
+                _currentInteractable = null;
+            }
+        }
+        
     }
 }
 

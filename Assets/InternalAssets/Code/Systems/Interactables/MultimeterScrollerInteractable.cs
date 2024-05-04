@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Transform))]
 public class MultimeterScrollerInteractable : MonoBehaviour, IInteractable
 {
     public static event Action<int> OnScrollStateChanged;
+    public UnityEvent OnInteract;
+    public UnityEvent OnInteractionLeft;
 
     [SerializeField] private int _currentScrollState;
 
@@ -28,6 +31,7 @@ public class MultimeterScrollerInteractable : MonoBehaviour, IInteractable
 
     public void Interact(InteractAction action)
     {
+        OnInteract?.Invoke();
         switch (action)
         {
             case InteractAction.ScrollUp: _currentScrollState++; break;
@@ -40,6 +44,11 @@ public class MultimeterScrollerInteractable : MonoBehaviour, IInteractable
         RotateScrollObject();
 
         OnScrollStateChanged?.Invoke(_currentScrollState);
+    }
+
+    public void LeaveInteraction()
+    {
+        OnInteractionLeft?.Invoke();
     }
 
 
