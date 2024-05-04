@@ -9,6 +9,8 @@ public class MultimeterStateController : MonoBehaviour
     private IMultimeterState _currentState = new DisabledMultimeterState();
     private InputData _inputData;
 
+    public bool ShowLogs = false;
+
     public void InizializeInput(InputData data)
     {
         _inputData = data;
@@ -43,9 +45,11 @@ public class MultimeterStateController : MonoBehaviour
         OnCalculateResult?.Invoke(resultData);
         OnDisplayResult?.Invoke(resultData.ToDisplay);
 
-        Debug.Log(resultData.ToString());
-        Debug.Log(resultData.ToDisplay);
-
+        if (ShowLogs)
+        {
+            Debug.Log(resultData.ToString());
+            Debug.Log(resultData.ToDisplay);
+        }
 
     }
 }

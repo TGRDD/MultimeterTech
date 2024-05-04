@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+﻿using Unity.VisualScripting;
 
 public class OutputData
 {
@@ -45,13 +45,11 @@ public class OutputData
 
     public override string ToString()
     {
-        return $"{this.GetType()} " +
-            $"Voltage [V] = {Voltage} " +
-            $"Amper [A] = {Amper} " +
-            $"Resistance [R] = {Resistance} " +
-            $"Power [P] = {Power} " +
-            $"AC Voltage [AC] = {ACVoltage}" +
-            $"DC VOLTAGE [DC] = {DCVoltage}";
+        return
+            $"[V] = {Voltage}\n" +
+            $"[A] = {Amper}\n" +
+            $"[V~] = {ACVoltage}\n" +
+            $"[Ω] = {DCVoltage}\n";
     }
 
 }

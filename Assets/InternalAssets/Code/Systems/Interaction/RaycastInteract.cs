@@ -23,13 +23,14 @@ public class RaycastInteract : MonoBehaviour
     {
         _chachedDirectRay = _originCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (!InputHelper.TryGetInteractAction(out InteractAction action)) return;
+        
 
         if (Physics.Raycast(_chachedDirectRay, out RaycastHit hit) && hit.collider.TryGetComponent<IInteractable>(out IInteractable interactable))
         {
             Debug.DrawRay(_chachedDirectRay.origin, _chachedDirectRay.direction * Vector3.Distance(_chachedDirectRay.origin, _chachedDirectRay.direction), Color.yellow);
             _gizmoHitPosition = hit.point;
 
+            InputHelper.TryGetInteractAction(out InteractAction action);
             interactable.Interact(action);
 
         }
