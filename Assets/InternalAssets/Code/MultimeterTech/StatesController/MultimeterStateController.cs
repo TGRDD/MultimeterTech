@@ -23,6 +23,8 @@ public class MultimeterStateController : MonoBehaviour
 
     public void ChangeState(IMultimeterState state)
     {
+        Debug.Log(state.ToString());
+
         if (_inputData == null)
         {
             Debug.LogError($"ERROR {this} - No InputData");

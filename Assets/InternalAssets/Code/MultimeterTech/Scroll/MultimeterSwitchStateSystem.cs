@@ -42,12 +42,12 @@ public class MultimeterSwitchStateSystem : MonoBehaviour
             case 0:
                 { controller.ChangeState(disabledState); break; }
             case 1:
-                { controller.ChangeState(resistanceState); break; }
-            case 2:
                 { controller.ChangeState(voltageState); break; }
-            case 3:
+            case 2:
                 { controller.ChangeState(acVoltageState); break; }
-            case 4: { controller.ChangeState(dcVoltageState); break; }
+            case 3:
+                { controller.ChangeState(dcVoltageState); break; }
+            case 4: { controller.ChangeState(resistanceState); break; }
         }
     }
 }

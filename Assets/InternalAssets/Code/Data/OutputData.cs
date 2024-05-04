@@ -47,9 +47,9 @@ public class OutputData
     {
         return
             $"[V] = {Voltage}\n" +
-            $"[A] = {Amper}\n" +
+            $"[A] = {DCVoltage}\n" +
             $"[V~] = {ACVoltage}\n" +
-            $"[Ω] = {DCVoltage}\n";
+            $"[Ω] = {Resistance}\n";
     }
 
 }
